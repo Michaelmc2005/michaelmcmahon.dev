@@ -44,7 +44,7 @@ const Navbar = () => {
           }}
         >
           <p className='text-white text-[18px] font-bold cursor-pointer flex '>
-            Michael McMahon - Software Engineer
+            Michael McMahon
           </p>
         </Link>
 
@@ -75,7 +75,6 @@ const Navbar = () => {
         </ul>
 
 
-
         <div className='sm:hidden flex flex-1 justify-end items-center'>
           <img
             src={toggle ? close : menu}
@@ -84,41 +83,40 @@ const Navbar = () => {
             onClick={() => setToggle(!toggle)}
           />
 
-        <div
-          className={`${
-            !toggle ? "hidden" : "flex"
-          } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
-        >
-          <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
-            {navLinks.map((nav) => (
-              <li
-                key={nav.id}
-                className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                  active === nav.title ? "text-white" : "text-secondary"
-                }`}
-                onClick={() => {
-                  setToggle(!toggle);
-                  setActive(nav.title);
-                }}
-              >
-                <a href={`#${nav.id}`}>{nav.title}</a>
+          <div
+            className={`${
+              !toggle ? "hidden" : "flex"
+            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+          >
+            <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
+              {navLinks.map((nav) => (
+                <li
+                  key={nav.id}
+                  className={`font-poppins font-medium cursor-pointer text-[16px] ${
+                    active === nav.title ? "text-white" : "text-secondary"
+                  }`}
+                  onClick={() => {
+                    setToggle(!toggle);
+                    setActive(nav.title);
+                  }}
+                >
+                  <a href={`#${nav.id}`}>{nav.title}</a>
+                </li>
+              ))}
+              <li>
+                <a href="https://discord.gg/4z2N7eUQCV" className='flex items-center gap-2'>
+                  <FaDiscord size={24} className="text-white"/>
+                  <span className="text-white">Discord</span>
+                </a>
               </li>
-            ))}
-            <li>
-              <a href="https://discord.gg/4z2N7eUQCV" className='flex items-center gap-2'>
-                <FaDiscord size={24} className="text-white"/>
-                <span className="text-white">Discord</span>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/michael-mcmahon-628ba21b5/" className='flex items-center gap-2'>
-                <FaLinkedin size={24} className="text-white"/>
-                <span className="text-white">LinkedIn</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-
+              <li>
+                <a href="https://www.linkedin.com/in/michael-mcmahon-628ba21b5/" className='flex items-center gap-2'>
+                  <FaLinkedin size={24} className="text-white"/>
+                  <span className="text-white">LinkedIn</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </nav>
