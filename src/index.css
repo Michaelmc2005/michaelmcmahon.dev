@@ -32,13 +32,29 @@
     #000000
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+.border-gradient {
+  position: relative;
+  padding: 2px; /* Adjust this to change the border thickness */
+  background: linear-gradient(to right, rgb(0, 11, 60), blue);
+  border-radius: 20px; /* Adjust this to match your desired border radius */
+}
+
+.border-gradient::after {
+  content: "";
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: white; /* Adjust this to match your desired inner background color */
+  border-radius: inherit;
+}
 
 .violet-gradient {
-  background: #804dee;
-  background: linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
+  background: #4d90ee;
+  background: linear-gradient(-90deg, #4da0ee 0%, rgba(60, 51, 80, 0) 100%);
   background: -webkit-linear-gradient(
     -90deg,
-    #804dee 0%,
+    #4d80ee 0%,
     rgba(60, 51, 80, 0) 100%
   );
 }

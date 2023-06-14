@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { FaDiscord, FaLinkedin } from "react-icons/fa"; // import the icons
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
@@ -42,10 +43,9 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
           <p className='text-white text-[18px] font-bold cursor-pointer flex '>
-            Adrian &nbsp;
-            <span className='sm:block hidden'> | JavaScript Mastery</span>
+            Michael McMahon &nbsp;
+            <span className='sm:block hidden'> - Software Engineer</span>
           </p>
         </Link>
 
@@ -61,7 +61,20 @@ const Navbar = () => {
               <a href={`#${nav.id}`}>{nav.title}</a>
             </li>
           ))}
+          <li>
+            <a href="https://discord.gg/4z2N7eUQCV" className='flex items-center gap-2'>
+              <FaDiscord size={24} className="text-white"/>
+              <span className="text-white">Discord</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/michael-mcmahon-628ba21b5/" className='flex items-center gap-2'>
+              <FaLinkedin size={24} className="text-white"/>
+              <span className="text-white">LinkedIn</span>
+            </a>
+          </li>
         </ul>
+
 
         <div className='sm:hidden flex flex-1 justify-end items-center'>
           <img

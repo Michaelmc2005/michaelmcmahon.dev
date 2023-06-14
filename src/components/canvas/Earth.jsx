@@ -26,6 +26,7 @@ const EarthCanvas = () => {
         position: [-4, 3, 6],
       }}
     >
+      
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           autoRotate
@@ -37,6 +38,17 @@ const EarthCanvas = () => {
 
         <Preload all />
       </Suspense>
+      <hemisphereLight intensity={1.5} groundColor='black' />
+
+      <spotLight
+        position={[-20, 50, 10]}
+        angle={0.12}
+        color={"#fff"}
+        penumbra={1}
+        intensity={2.5}
+        castShadow
+        shadow-mapSize={1024}
+      />
     </Canvas>
   );
 };
